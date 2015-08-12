@@ -49,6 +49,7 @@ void Simulator::calculate_sum(){
 bool Simulator::init_process_n_event(string input_filename){
   //initialize the input file stream
   ifstream fin(input_filename);
+  fin.open(input_filename, ios::in);
   if (!fin.is_open()){
     cout << "cannot open input file!" << "\n\r";
     exit(1);

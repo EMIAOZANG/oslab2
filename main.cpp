@@ -10,7 +10,6 @@
 #include <unistd.h>
 #include <getopt.h>
 #include <string>
-#include <regex>
 #include <cstring>
 #include <queue>
 #include <vector>

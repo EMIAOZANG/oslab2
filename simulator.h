@@ -12,6 +12,7 @@
 #include <deque>
 #include <cstdlib>
 #include <algorithm>
+#include <string>
 #include <iomanip>
 #include <numeric>
 #include <stack>

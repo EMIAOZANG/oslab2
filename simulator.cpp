@@ -1,5 +1,4 @@
 #include "simulator.h"
-#include <string>
 
 //implementation of constructor
 
@@ -92,13 +91,17 @@ bool Simulator::init_sched(string sched_param, bool _verbose){
   }
   else if (sched_param[0] == 'R'){
     sched = new RR_Scheduler();
-    quantum = stoi(sched_param.substr(1)); 
-    sched_type = "RR " + to_string(quantum);
+    char q[30];
+    quantum = atoi(sched_param.substr(1).c_str()); 
+    snprintf(q,30,"%d",quantum);
+    sched_type = "RR " + string(q);
   }
   else if (sched_param[0] == 'P'){
+    char q[30];
     sched = new PRIO_Scheduler();
-    quantum = stoi(sched_param.substr(1)); 
-    sched_type = "PRIO " + to_string(quantum);
+    quantum = atoi(sched_param.substr(1).c_str()); 
+    snprintf(q,30,"%d",quantum);
+    sched_type = "PRIO " + string(q);
   }
   else return false;
   return true;
